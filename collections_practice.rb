@@ -12,9 +12,7 @@ def sort_array_char_count(array)
 end
 
 def swap_elements(array)
-  temp = array[2]
-  array[2] = array[1]
-  array[1] = temp
+  array[1], array[2] = array[2], array[1]
   array
 end
 
@@ -23,7 +21,7 @@ def reverse_array(array)
 end
 
 def kesha_maker(array)
-  array.collect { |e| e = "#{e.slice(0..1)}$#{e.slice(3..(e.size-1))}"}
+  array.each { |e| e[2] = '$'}
 end
 
 def find_a(array)
@@ -31,7 +29,7 @@ def find_a(array)
 end
 
 def sum_array(array)
-  array.inject(0) { |result, element| result + element }
+  array.inject(:+)
 end
 
 def add_s(array)
